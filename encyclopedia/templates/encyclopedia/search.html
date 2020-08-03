@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}Search{% endblock %}
+
+{% block body %}
+    <h1>{{entries|length }} result{{entries|pluralize }} for '{{query}}'</h1>
+
+    <ul class="list-group list-group-flush">
+        {% for entry in entries %}
+            <a href='/wiki/{{entry}}'><li class="list-group-item">{{ entry }}</li></a>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
